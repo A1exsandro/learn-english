@@ -3,3 +3,4 @@
 
 ## Setup basic
 * npx create-next-app
+* yarn add @mantine/core @mantine/hooks @emotion/react
