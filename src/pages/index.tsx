@@ -1,20 +1,7 @@
-import { useState } from 'react'
-import Head from 'next/head'  
-import {
-  AppShell,
-  Navbar,
-  Header,
-  Footer,
-  Aside,
-  Text,
-  MediaQuery,
-  Burger,
-  useMantineTheme,
-} from '@mantine/core'; 
+import { Text } from "@mantine/core";
+import Head from "next/head";
 
 export default function Home() {
-  const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
 
   return (
     <>
@@ -24,68 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppShell
-        styles={{
-          main: {
-            background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
-          },
-        }}
-        navbarOffsetBreakpoint="sm"
-        asideOffsetBreakpoint="sm"
-        navbar={
-          <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-            <Text>Application navbar</Text>
-          </Navbar>
-        }
-        aside={
-          <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-            <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-              <Text>Application sidebar</Text>
-            </Aside>
-          </MediaQuery>
-        }
-        header={
-          <Header height={{ base: 50, md: 70 }} p="md">
-            <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
-              <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
-                <Burger
-                  opened={opened}
-                  onClick={() => setOpened((o) => !o)}
-                  size="sm"
-                  color={theme.colors.gray[6]}
-                  mr="xl"
-                />
-              </MediaQuery>
-
-              <Text
-                variant="gradient"
-                gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
-                sx={{ fontFamily: 'Greycliff CF, sans-serif' }} 
-                fz="xl"
-                fw={700}
-              >
-                Learn English
-              </Text>
-            </div>
-          </Header>
-        }
-        footer={
-          <Footer height={60} p="md">
-            <Text
-              variant="gradient"
-              gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
-              sx={{ fontFamily: 'Greycliff CF, sans-serif' }}
-              ta="center"
-              fz="xl"
-              fw={700}
-            >
-              Never Stop Trying
-            </Text>
-          </Footer>
-        }
-      >
-        <Text>Resize app to see responsive navbar in action</Text>
-    </AppShell>
+      <Text>Home</Text>
     </>
   )
 }
