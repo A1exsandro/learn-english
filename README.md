@@ -12,3 +12,6 @@
 ## To do
 ## always check the tasks
 * [] on the english page, adjust the sizes
+* [] create a database
+* [] create fields for the grammar classes
+* [] create exercises
