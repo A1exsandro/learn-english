@@ -1,7 +1,7 @@
 # Learn English
 # Under Development
 
-## A WebSite To Learn English Together
+> ## A WebSite To Learn English Together
 
 ## Setup basic
 * npx create-next-app
@@ -10,4 +10,5 @@
 * yarn add @mantine/form
 
 ## To do
-* [] always check the tasks
+## always check the tasks
+* [] on the english page, adjust the sizes
