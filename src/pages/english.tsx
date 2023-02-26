@@ -1,21 +1,52 @@
 import React, { useState } from "react"
-import { Box, Button, Group, Modal, Paper, Text, TextInput, Transition } from "@mantine/core"
+import { Box, Button, Flex, Group, Modal, TextInput } from "@mantine/core"
 import { useForm } from '@mantine/form'
 
 export default function English () {
+  interface NewWord {
+    word: string;
+    translation: string;
+    english: boolean;
+  }
+
   const [opened, setOpened] = useState(false)
-  const [translation, setTranslation] = useState(false)
+  const [buttonText, setButtonText] = useState<string[]>([])
   const [newWords, setNewWords] = useState([
     {
       word: 'Rice',
-      translation: 'Arroz'
-    }
+      translation: 'Arroz',
+      english: true
+    },
+    {
+      word: 'Walk',
+      translation: 'Andar',
+      english: true
+    },
+    {
+      word: 'Try',
+      translation: 'Tentar',
+      english: true
+    },
+    {
+      word: 'Love',
+      translation: 'Amar',
+      english: true
+    },
   ]) 
+ 
+  // Change content button
+  const handleClick = (i: number, nw: NewWord) => {
+    const newButtonText = [...buttonText]
+    nw.english = !nw.english
+    newButtonText[i] = nw.english === true ? nw.word : nw.translation
+    setButtonText(newButtonText) 
+  }
 
   const form = useForm({
     initialValues: {
       word: '',
       translation: '',
+      english: true
     }
   })
 
@@ -51,19 +82,27 @@ export default function English () {
       </Modal>
 
       {/* NEW WORDS */}
-      <div>
+      <Flex
+        mih={50}
+        bg="rgba(0, 0, 0, .3)"
+        gap="md"
+        justify="flex-start"
+        align="center"
+        direction="row"
+        wrap="wrap"
+      >
       {
-        newWords.map((nw, i) => (
+        newWords.map((nw, i) => ( 
           <Button 
             key={i}
-            color={translation ? 'orange' : 'lime'} 
-            onClick={() => setTranslation(!translation)}
-          > 
-            {!translation ? nw.word : nw.translation}
+            color={nw.english === true ? 'orange' : 'lime'} 
+            onClick={() => handleClick(i, nw)}
+          >  
+            {buttonText[i] || nw.word}
           </Button>
         ))
       }
-      </div> 
+      </Flex>
     </>
   )
 }
