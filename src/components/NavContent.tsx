@@ -19,6 +19,9 @@ export default function NavContent () {
       <Link href="/english">
         <Button variant='subtle'>English</Button>
       </Link>
+      <Link href="/exercise">
+        <Button variant='subtle'>Exercise</Button>
+      </Link>
     </Flex>
   )
 }
