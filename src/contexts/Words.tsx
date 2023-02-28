@@ -7,8 +7,8 @@ interface NewWord {
 }
 
 export interface WordsContextProps {
-  newWords?: NewWord[]
-  setNewWords?: React.Dispatch<React.SetStateAction<NewWord[]>>
+  newWords: NewWord[]
+  setNewWords: React.Dispatch<React.SetStateAction<NewWord[]>>
 } 
 
 interface WordsContextProviderProps extends WordsContextProps {
