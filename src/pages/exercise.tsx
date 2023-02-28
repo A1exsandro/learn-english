@@ -1,9 +1,26 @@
 import { useWords} from "@/contexts/Words"
-import { Button, Flex, Text } from "@mantine/core"
+import { Button, Flex } from "@mantine/core"
 
 export default function Exercise () {
   const { newWords, setNewWords } = useWords()
-  console.log(newWords)
+  
+  
+  const randomNumbers = ()  => {
+    let nRandons: number[] = []
+    for (let i = 0; i < 4; i++) {
+      let nRandom  
+
+      do {
+        nRandom = Math.floor(Math.random() * newWords.length)
+      } while (nRandons.includes(nRandom))
+
+      nRandons.push(nRandom)
+    }
+    
+    return nRandons
+  }
+  const arrayNRandons = randomNumbers()
+  console.log(arrayNRandons) 
 
   return (
     <>
@@ -28,10 +45,10 @@ export default function Exercise () {
         direction="row"
         wrap="wrap"
       >
-        <Button>{newWords[1].translation}</Button>
-        <Button>{newWords[2].translation}</Button>
-        <Button>{newWords[0].translation}</Button>
-        <Button>{newWords[3].translation}</Button>
+        <Button>{newWords[arrayNRandons[0]].translation}</Button>
+        <Button>{newWords[arrayNRandons[1]].translation}</Button>
+        <Button>{newWords[arrayNRandons[2]].translation}</Button>
+        <Button>{newWords[arrayNRandons[3]].translation}</Button>
       </Flex>
     </>
   )

@@ -17,7 +17,7 @@
 * [] create exercises
 
 ## Exercise Page
-* [] import the words from the english page
+* [x] import the words from the english page
 * [] list one at a time
 * [] offer a group of words containing only one with the correct transtation
 * [] show the result of the choice, if correct or incorrect
