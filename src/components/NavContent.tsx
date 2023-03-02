@@ -1,42 +1,39 @@
-import { Flex, Button } from '@mantine/core' 
+import { Flex, Button, NavLink, Box } from '@mantine/core' 
 import Link from 'next/link'
 
 export default function NavContent () {  
 
   return (
-    <Flex
-      mih={50}
-      bg="rgba(0, 0, 0, .3)"
-      gap="xs"
-      justify="flex-start"
-      align="center"
-      direction="column"
-      wrap="wrap"
-    >
-      <Link href="/">
-        <Button variant='subtle'>Home</Button>
+    <Box w={130}>
+      <Link style={{textDecoration: 'none'}} href="/">
+        <NavLink label="Home" />
       </Link>
-      <Link href="/english">
-        <Button variant='subtle'>English</Button>
+
+      <Link style={{textDecoration: 'none'}} href="/english">
+        <NavLink label="English" />
       </Link>
-      <Link href="/exercise">
-        <Button variant='subtle'>Exercise</Button>
+
+      <Link style={{textDecoration: 'none'}} href="/exercise">
+        <NavLink label="Exercises" />
       </Link>
-      <Link href="/grammar/article">
-        <Button variant='subtle'>Aticle</Button>
+
+      <Link style={{textDecoration: 'none'}} href="/grammar/article">
+        <NavLink label="Articles" />
       </Link>
-      <Link href="/grammar/noun">
-        <Button variant='subtle'>Noun</Button>
+
+      <Link style={{textDecoration: 'none'}} href="/grammar/noun">
+        <NavLink label="Noun" />
       </Link>
-      <Link href="/grammar/pronoun">
-        <Button variant='subtle'>Pronoun</Button>
+
+      <Link style={{textDecoration: 'none'}} href="/grammar/pronoun">
+        <NavLink label="Pronouns" />
       </Link>
-      <Link href="/grammar/verbs/verb">
-        <Button variant='subtle'>Verb</Button>
-      </Link>
-      <Link href="/grammar/verbs/modal">
-        <Button variant='subtle'>Modal Verbs</Button>
-      </Link>
-    </Flex>
+ 
+      <NavLink label="Verb" childrenOffset={28}>
+        <Link style={{textDecoration: 'none'}} href="/grammar/verbs/modal">
+          <NavLink label="Modal Verbs" />
+        </Link>
+      </NavLink>
+      </Box>
   )
 }
