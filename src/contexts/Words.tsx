@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react"
 
-interface NewWord {
+export interface NewWord {
   word: string
   translation: string
   english: boolean
