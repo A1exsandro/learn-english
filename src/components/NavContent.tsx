@@ -31,6 +31,12 @@ export default function NavContent () {
       <Link href="/grammar/pronoun">
         <Button variant='subtle'>Pronoun</Button>
       </Link>
+      <Link href="/grammar/verbs/verb">
+        <Button variant='subtle'>Verb</Button>
+      </Link>
+      <Link href="/grammar/verbs/modal">
+        <Button variant='subtle'>Modal Verbs</Button>
+      </Link>
     </Flex>
   )
 }
