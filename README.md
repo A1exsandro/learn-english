@@ -21,3 +21,4 @@
 * [] list one at a time
 * [] offer a group of words containing only one with the correct transtation
 * [] show the result of the choice, if correct or incorrect
+* [] in NavContent close after choosing
