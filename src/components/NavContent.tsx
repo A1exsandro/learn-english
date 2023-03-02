@@ -22,6 +22,15 @@ export default function NavContent () {
       <Link href="/exercise">
         <Button variant='subtle'>Exercise</Button>
       </Link>
+      <Link href="/grammar/article">
+        <Button variant='subtle'>Aticle</Button>
+      </Link>
+      <Link href="/grammar/noun">
+        <Button variant='subtle'>Noun</Button>
+      </Link>
+      <Link href="/grammar/pronoun">
+        <Button variant='subtle'>Pronoun</Button>
+      </Link>
     </Flex>
   )
 }
