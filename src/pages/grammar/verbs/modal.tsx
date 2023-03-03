@@ -1,4 +1,4 @@
-import { Button, Center, Flex, Popover, Text } from "@mantine/core";
+import { Button, Flex, Popover, Text } from "@mantine/core";
 import { useState } from "react";
 
 export default function Modal () {
@@ -67,10 +67,9 @@ export default function Modal () {
       >
         {
           arrayModal.map((a, i) => (
-            
-            <Popover width={200} position="bottom" withArrow shadow="md">
+            <Popover key={i} width={200} position="bottom" withArrow shadow="md">
               <Popover.Target>
-                <Button key={i}>{a.modal}</Button>
+                <Button>{a.modal}</Button>
               </Popover.Target>
               <Popover.Dropdown>
                 <Text size="sm">{a.explanation}</Text>
