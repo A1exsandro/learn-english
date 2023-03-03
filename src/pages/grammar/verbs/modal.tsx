@@ -1,9 +1,44 @@
-import { Button, Center, Flex, Text } from "@mantine/core";
+import { Button, Center, Flex, Popover, Text } from "@mantine/core";
 import { useState } from "react";
 
 export default function Modal () {
-  const [arrayModal, setArrayModal] = useState<string[]>([
-    'can', 'could', 'must', 'may', 'might', 'should', 'shall', 'will', 'would'
+  const [arrayModal, setArrayModal] = useState([
+    {
+      modal: 'can',
+      explanation: 'poder (habilidade ou possibilidade)'
+    },
+    {
+      modal: 'could',
+      explanation: 'poderia (habilidade ou possibilidade no passado)'
+    },
+    {
+      modal: 'must',
+      explanation: 'dever (obrigação, necessidade)'
+    },
+    {
+      modal: 'may',
+      explanation: 'poder (permissão ou possibilidade)'
+    },
+    {
+      modal: 'might',
+      explanation: 'poderia (permissão ou possibilidade no passado)'
+    },
+    {
+      modal: 'should',
+      explanation: 'deveria (obrigação, conselho, sugestão'
+    },
+    {
+      modal: 'shall',
+      explanation: 'dever (futuro próximo, sugestão, convite)'
+    },
+    {
+      modal: 'will',
+      explanation: 'vontade (futuro, promessa)'
+    },
+    {
+      modal: 'would',
+      explanation: 'iria (futuro no passado, condição)'
+    },
   ])
 
   return (
@@ -31,8 +66,16 @@ export default function Modal () {
         wrap="wrap"
       >
         {
-          arrayModal.map((modal, i) => (
-            <Button key={i}>{modal}</Button>
+          arrayModal.map((a, i) => (
+            
+            <Popover width={200} position="bottom" withArrow shadow="md">
+              <Popover.Target>
+                <Button key={i}>{a.modal}</Button>
+              </Popover.Target>
+              <Popover.Dropdown>
+                <Text size="sm">{a.explanation}</Text>
+              </Popover.Dropdown>
+            </Popover>
           ))
         }
       </Flex>
