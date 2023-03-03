@@ -1,26 +1,45 @@
-import { useWords} from "@/contexts/Words"
+import { NewWord, useWords} from "@/contexts/Words"
 import { Button, Flex } from "@mantine/core"
+import { useEffect, useState } from "react"
 
 export default function Exercise () {
+  // let nRandons: number[] = []
   const { newWords, setNewWords } = useWords()
+  // const [resButton1, setResButton1] = useState<string>()
+  // const [arrayRes, setArrayRes] = useState<NewWord[]>([]) 
+  // const [res, setRes] = useState<string[]>([])
   
-  
-  const randomNumbers = ()  => {
-    let nRandons: number[] = []
-    for (let i = 0; i < 4; i++) {
-      let nRandom  
-
-      do {
-        nRandom = Math.floor(Math.random() * newWords.length)
-      } while (nRandons.includes(nRandom))
-
-      nRandons.push(nRandom)
-    }
+  // useEffect(() => { 
     
-    return nRandons
-  }
-  const arrayNRandons = randomNumbers()
-  console.log(arrayNRandons) 
+
+  //   for (let i = 0; i < 4; i++) {   
+  //     let nRandom
+
+  //     do {
+  //       nRandom = Math.floor(Math.random() * 4)   
+  //     } while (nRandons.includes(nRandom))
+      
+  //     nRandons.push(nRandom) 
+  //   } 
+  //   console.log(nRandons)
+  //   nRandons.map((nr) => (
+  //     setRes([...res, newWords[nr].translation])
+  //   ))
+  // },[]) 
+  // console.log(res)
+
+  // const randomNumbers = ()  => {
+  
+  
+  
+  //   return nRandons
+  // }
+  // console.log(nRandons)
+  // const arrayRes = randomNumbers()
+  
+  // console.log(arrayRes) 
+  // console.log(arrayRes)
+  
 
   return (
     <>
@@ -45,10 +64,11 @@ export default function Exercise () {
         direction="row"
         wrap="wrap"
       >
-        <Button>{newWords[arrayNRandons[0]].translation}</Button>
-        <Button>{newWords[arrayNRandons[1]].translation}</Button>
-        <Button>{newWords[arrayNRandons[2]].translation}</Button>
-        <Button>{newWords[arrayNRandons[3]].translation}</Button>
+        
+            
+
+            {/* <Button>{res}</Button> */}
+          
       </Flex>
     </>
   )
