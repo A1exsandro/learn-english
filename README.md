@@ -13,7 +13,7 @@
 ## always check the tasks
 * [] on the english page, adjust the sizes
 * [] create a database
-* [] create fields for the grammar classes
+* [x] create fields for the grammar classes
 * [] create exercises
 
 ## Exercise Page
@@ -23,3 +23,8 @@
 * [] show the result of the choice, if correct or incorrect
 * [] in NavContent close after choosing
 * [] check the layout
+
+## Possible Feature
+* [] memory game with english words
+* [] review your words
+* [] tag the images
