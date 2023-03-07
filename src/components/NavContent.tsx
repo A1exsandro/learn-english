@@ -75,6 +75,10 @@ export default function NavContent () {
         <Link style={{textDecoration: 'none'}} href="/opposite">
           <NavLink label="Opposite" />
         </Link>
+
+        <Link style={{textDecoration: 'none'}} href="/similar">
+          <NavLink label="Similar" />
+        </Link>
       </Box>
     </ScrollArea>
   )
