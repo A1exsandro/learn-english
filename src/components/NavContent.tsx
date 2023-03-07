@@ -79,6 +79,10 @@ export default function NavContent () {
         <Link style={{textDecoration: 'none'}} href="/similar">
           <NavLink label="Similar" />
         </Link>
+
+        <Link style={{textDecoration: 'none'}} href="/phrasal">
+          <NavLink label="Pharsal Verbs" />
+        </Link>
       </Box>
     </ScrollArea>
   )
