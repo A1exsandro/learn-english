@@ -28,3 +28,7 @@
 * [] memory game with english words
 * [] review your words
 * [] tag the images
+
+## More Pages
+* Opposite words
+* Similar words
