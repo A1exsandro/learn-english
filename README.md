@@ -28,6 +28,7 @@
 * [] memory game with english words
 * [] review your words
 * [] tag the images
+* [] study the possibility of working with audio
 
 ## More Pages
 * Opposite words
