@@ -8,6 +8,9 @@
 * yarn add @mantine/core @mantine/hooks @emotion/react
 * yarn add @tabler/icons
 * yarn add @mantine/form
+* yarn add firebase
+* yarn add dotenv
+* yarn add --dev @types/firebase
 
 ## To do
 ## always check the tasks
