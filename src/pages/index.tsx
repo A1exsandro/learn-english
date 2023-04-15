@@ -1,7 +1,39 @@
-import { Text } from "@mantine/core";
+import { Text, Image, Card, Group, Badge, Button, Box, Flex, BackgroundImage, Center } from "@mantine/core";
+import { child } from "firebase/database";
 import Head from "next/head";
+import { useRef } from "react";
+import { database, ref, set, get, push, onValue } from "../database/config_database"
 
 export default function Home() {
+  const audioRef = useRef<HTMLAudioElement>(null)
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play()
+    }
+  }
+
+  function writeData(userId: any, name: any) {
+    const db = database;
+    set(ref(db, 'users/' + userId), {
+        username: name
+    })
+  }
+  writeData("Alexsandro", "word")
+
+  function readData() {
+    const dbRef = ref(database)
+    get(child(dbRef, "/users")).then((snapshot: any) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val())
+      } else {
+        console.log("no data available")
+      }
+    }).catch((error:any) => {
+      console.error(error)
+    })
+  }
+  readData()
 
   return (
     <>
@@ -12,6 +44,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Text>Home</Text>
+      
+      <Flex
+        direction="column" 
+        maw={240}
+      >
+        <Image
+          src="https://firebasestorage.googleapis.com/v0/b/letmeask-333417.appspot.com/o/guava.jpg?alt=media&token=f99814cc-c0e7-425d-b028-fa16e73afe73"
+          height={220}
+          radius="md"
+          mx="auto"
+          fit="contain" 
+          alt="Norway"
+        /> 
+
+        <audio ref={audioRef}>
+          <source src="https://firebasestorage.googleapis.com/v0/b/letmeask-333417.appspot.com/o/guava.mp3?alt=media&token=9954a02d-e0cd-4010-b78d-3f91809b9391" />
+        </audio>
+       
+        <Button onClick={playAudio} variant="light" color="blue" fullWidth mt="md" radius="md">
+          Guava
+        </Button>
+      </Flex>
+
     </>
   )
 }
