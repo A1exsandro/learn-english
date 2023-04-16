@@ -1,4 +1,4 @@
-import { Text, Image, Card, Group, Badge, Button, Box, Flex, BackgroundImage, Center } from "@mantine/core";
+import { Text, Image, Button, Flex } from "@mantine/core";
 import { child } from "firebase/database";
 import Head from "next/head";
 import { useRef } from "react";
