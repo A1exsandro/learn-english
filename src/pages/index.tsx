@@ -1,8 +1,37 @@
 import { Text, Image, Button, Flex } from "@mantine/core";
 import { child } from "firebase/database";
 import Head from "next/head";
+import { type } from "os";
 import { useRef } from "react";
 import { database, ref, set, get, push, onValue } from "../database/config_database"
+
+type NewWord = {
+  id: string;
+  word: string;
+  translation: string;
+  image: string;
+}
+
+let testNewWord: NewWord [] = [
+  {
+    id: '101',
+    word: 'New',
+    translation: 'Novo',
+    image: 'www.image.com'
+  },
+  {
+    id: '102',
+    word: 'Girl',
+    translation: 'Garota',
+    image: 'www.image.com'
+  },
+  {
+    id: '103',
+    word: 'Boy',
+    translation: 'Menino',
+    image: 'www.image.com'
+  },
+]
 
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null)
@@ -13,13 +42,13 @@ export default function Home() {
     }
   }
 
-  function writeData(userId: any, name: any) {
+  function writeData(userId: any, newWord: NewWord []) {
     const db = database;
     set(ref(db, 'users/' + userId), {
-        username: name
+      newWord
     })
   }
-  writeData("Alexsandro", "word")
+  writeData("Alexsandro", testNewWord ) 
 
   function readData() {
     const dbRef = ref(database)
