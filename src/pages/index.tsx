@@ -1,32 +1,27 @@
 import { Text, Image, Button, Flex } from "@mantine/core";
-import { child } from "firebase/database";
-import Head from "next/head";
-import { type } from "os";
+import { child, DataSnapshot } from "firebase/database";
+import Head from "next/head"; 
 import { useRef } from "react";
 import { database, ref, set, get, push, onValue } from "../database/config_database"
 
-type NewWord = {
-  id: string;
+type NewWord = { 
   word: string;
   translation: string;
   image: string;
 }
 
 let testNewWord: NewWord [] = [
-  {
-    id: '101',
+  { 
     word: 'New',
     translation: 'Novo',
     image: 'www.image.com'
   },
-  {
-    id: '102',
+  { 
     word: 'Girl',
     translation: 'Garota',
     image: 'www.image.com'
   },
-  {
-    id: '103',
+  { 
     word: 'Boy',
     translation: 'Menino',
     image: 'www.image.com'
@@ -42,27 +37,27 @@ export default function Home() {
     }
   }
 
-  function writeData(userId: any, newWord: NewWord []) {
-    const db = database;
-    set(ref(db, 'users/' + userId), {
-      newWord
-    })
-  }
-  writeData("Alexsandro", testNewWord ) 
+  // function writeData(userId: any, newWord: NewWord []) {
+  //   const db = database;
+  //   set(ref(db, 'users/' + userId), {
+  //     newWord
+  //   })
+  // }
+  // writeData("Alexsandro", testNewWord ) 
 
-  function readData() {
-    const dbRef = ref(database)
-    get(child(dbRef, "/users")).then((snapshot: any) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val())
-      } else {
-        console.log("no data available")
-      }
-    }).catch((error:any) => {
-      console.error(error)
-    })
-  }
-  readData()
+  // function readData() {
+  //   const dbRef = ref(database)
+  //   get(child(dbRef, "/users")).then((snapshot: DataSnapshot) => {
+  //     if (snapshot.exists()) {
+  //       console.log(snapshot.val())
+  //     } else {
+  //       console.log("no data available")
+  //     }
+  //   }).catch((error:any) => {
+  //     console.error(error)
+  //   })
+  // }
+  // readData()
 
   return (
     <>
