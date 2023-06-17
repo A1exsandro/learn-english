@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { Box, Button, Flex, Group, Image, Modal, TextInput } from "@mantine/core"
 import { useForm } from '@mantine/form'
 
-import { database, ref, set, get, push, onValue } from "../database/config_database"
+// import { database, ref, set, get, push, onValue } from "../database/config_database"
 import { child, DataSnapshot } from "firebase/database" 
 
 export default function English () {
@@ -48,21 +48,21 @@ export default function English () {
     },
   ]) 
 
-  function readData() {
-    const dbRef = ref(database)
-    get(child(dbRef, "/word")).then((snapshot: DataSnapshot) => {
-      if (snapshot.exists()) {
-        //setDatabaseWord(snapshot.val().Alexsandro.newWord)
-        console.log(
-          snapshot.val().pir5HWose7WXMSWBFvrjoqbkxE83.nameWord
-        )
-      } else {
-        console.log("no data available")
-      }
-    }).catch((error:any) => {
-      console.error(error)
-    })
-  } 
+  // function readData() {
+  //   const dbRef = ref(database)
+  //   get(child(dbRef, "/word")).then((snapshot: DataSnapshot) => {
+  //     if (snapshot.exists()) {
+  //       //setDatabaseWord(snapshot.val().Alexsandro.newWord)
+  //       console.log(
+  //         snapshot.val().pir5HWose7WXMSWBFvrjoqbkxE83.nameWord
+  //       )
+  //     } else {
+  //       console.log("no data available")
+  //     }
+  //   }).catch((error:any) => {
+  //     console.error(error)
+  //   })
+  // } 
   // console.log(databaseWord)
  
   // Change content button
@@ -88,7 +88,7 @@ export default function English () {
     <>
       <Group position="right"> 
         <Button onClick={() => setOpened(true)}>Add Word</Button>
-        <Button onClick={readData}>Get Database</Button>
+        {/* <Button onClick={readData}>Get Database</Button> */}
       </Group>
       
      <Modal
