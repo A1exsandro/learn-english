@@ -27,7 +27,7 @@ export default function Layout ({ children }: any) {
       asideOffsetBreakpoint="sm"
       navbar={
         <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 150, lg: 300 }}>
-          <NavContent />
+          <NavContent setOpened={setOpened}/>
         </Navbar>
       }
       header={
